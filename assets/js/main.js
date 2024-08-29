@@ -15,7 +15,7 @@ let clickCount = localStorage.getItem(`${userId}_clickCount`) ? parseInt(localSt
 let heartSize = 150 + clickCount * 2; // 初期のハートサイズを設定
 
 // ハートの色候補
-const colors = ['#FFD700', '#FF0000', '#FFC0CB', '#FFFFFF', '#ADD8E6', '#90EE90', '#FFA07A']; // 金（もっと神々しい）, 赤, ピンク, 白, 水色, 薄緑, 薄オレンジ
+const colors = ['#FFD700', '#FF0000', '#FFC0CB', '#FFFFFF', '#ADD8E6', '#90EE90', '#FFA07A']; // 金, 赤, ピンク, 白, 水色, 薄緑, 薄オレンジ
 
 // ランダムな色を取得する関数
 function getRandomColor() {
@@ -38,10 +38,45 @@ heartButton.addEventListener('click', function() {
     clickCount++; // クリック回数を増やす
 
     // ハートのサイズが500に達した場合の処理
-    if (150 + clickCount * 2 >= 300) {
+    if (150 + clickCount * 2 >= 500) {
+        // ハートの色に応じたカウントを増やす
+        let currentColor = this.style.color; // 現在のハートの色を取得
+        switch (currentColor) {
+            case '#FFD700': // ゴールド
+                let goldCount = parseInt(localStorage.getItem('goldCount')) || 0;
+                localStorage.setItem('goldCount', goldCount + 1);
+                break;
+            case '#FF0000': // レッド
+                let redCount = parseInt(localStorage.getItem('redCount')) || 0;
+                localStorage.setItem('redCount', redCount + 1);
+                break;
+            case '#FFC0CB': // ピンク
+                let pinkCount = parseInt(localStorage.getItem('pinkCount')) || 0;
+                localStorage.setItem('pinkCount', pinkCount + 1);
+                break;
+            case '#FFFFFF': // ホワイト
+                let whiteCount = parseInt(localStorage.getItem('whiteCount')) || 0;
+                localStorage.setItem('whiteCount', whiteCount + 1);
+                break;
+            case '#ADD8E6': // ライトブルー
+                let lightblueCount = parseInt(localStorage.getItem('lightblueCount')) || 0;
+                localStorage.setItem('lightblueCount', lightblueCount + 1);
+                break;
+            case '#90EE90': // ライトグリーン
+                let lightgreenCount = parseInt(localStorage.getItem('lightgreenCount')) || 0;
+                localStorage.setItem('lightgreenCount', lightgreenCount + 1);
+                break;
+            case '#FFA07A': // ライトオレンジ
+                let lightorangeCount = parseInt(localStorage.getItem('lightorangeCount')) || 0;
+                localStorage.setItem('lightorangeCount', lightorangeCount + 1);
+                break;
+        }
+
+        // ハートのリセット処理
         heartSize = 150; // サイズを初期化
         clickCount = 0; // クリック回数をリセット
-        heartButton.style.color = getRandomColor(); // ハートの色をランダムに変更
+        this.style.color = getRandomColor(); // ハートの色をランダムに変更
+        localStorage.setItem(`${userId}_clickCount`, clickCount); // クリック回数のリセットを保存
     } else {
         heartSize = 150 + clickCount * 2; // サイズを増加
     }
@@ -53,7 +88,7 @@ heartButton.addEventListener('click', function() {
 
     const heartsContainer = document.querySelector('.hearts-container');
     
-    for (let i = 0; i < 20; i++) { // 飛ぶハートの数を10に設定
+    for (let i = 0; i < 10; i++) { // 飛ぶハートの数を10に設定
         const heart = document.createElement('div');
         heart.className = 'heart';
         heart.innerText = '❤️';
@@ -67,7 +102,7 @@ heartButton.addEventListener('click', function() {
 
         // 不規則な方向に飛ぶアニメーション
         const angle = Math.random() * 360; // 0から360度のランダムな角度
-        const distance = Math.random() * 250 + 50; // 50pxから200pxの範囲で飛ぶ
+        const distance = Math.random() * 150 + 50; // 50pxから200pxの範囲で飛ぶ
         const endX = distance * Math.cos(angle * (Math.PI / 180));
         const endY = distance * Math.sin(angle * (Math.PI / 180));
 

@@ -3,28 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happiness Recorder</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <title>Heart Collection</title>
+    <link rel="stylesheet" href="assets/css/collection.css">
 </head>
 <body>
-    <!-- アプリのタイトルをページ上部に配置 -->
-    <div class="app-header">
+    <header class="app-header">
         <h1 class="app-title">happyhappy</h1>
-    </div>
+    </header>
 
     <div class="container">
-        <button class="heart-button">
-            ❤️
-        </button>
+        <!-- 中心にハートを表示 -->
+        <div class="heart-icon" style="color: #FF0000;">❤️</div>
     </div>
-    
+
     <div class="menu-bar">
         <a href="index.html">ホーム</a>
         <a href="collection.html">コレクション</a>
     </div>
 
-    <div class="hearts-container"></div>
-
-    <script src="assets/js/main.js"></script>
+    <!-- collection.js を接続 -->
+    <script src="assets/js/collection.js"></script>
 </body>
 </html>
