@@ -1,0 +1,103 @@
+/* 背景の設定 */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #ffe4e1, #ffb6c1); /* グラデーション背景 */
+    overflow: hidden; /* ハートが飛び出すのでスクロールバーを表示させない */
+}
+
+/* ヘッダーと基本レイアウト */
+.app-header {
+    text-align: center;
+    padding: 20px 0;
+    background-color: transparent;
+    width: 100%;
+    position: absolute;
+    top: 0;
+}
+
+.app-title {
+    margin: 0;
+    font-size: 36px;
+    color: #ffffff;
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* ハートのスライダー */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 120px);
+    padding-top: 60px;
+}
+
+.heart-slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 80vw;
+}
+
+.heart-slide {
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 150px;
+    position: relative;
+    transition: transform 0.5s ease, opacity 0.5s ease; /* スムーズなスライドとフェード */
+    opacity: 0; /* デフォルトでは非表示 */
+}
+
+.heart-icon {
+    font-size: 350px; /* ハートの大きさを350pxに設定 */
+    position: relative;
+    transition: transform 0.5s ease, color 0.5s ease; /* スムーズな移動と色の変化 */
+}
+
+.heart-count {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px; /* カウントのサイズ */
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+
+
+/* メニューバー */
+.menu-bar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #f1f1f1;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.menu-bar a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.menu-bar a:hover {
+    color: pink;
+}
+
+.menu-bar a:active {
+    color: pink;
+}

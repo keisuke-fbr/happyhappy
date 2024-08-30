@@ -10,6 +10,46 @@ body {
     overflow: hidden; /* ハートが飛び出すのでスクロールバーを表示させない */
 }
 
+/* ヘッダーのスタイル */
+.app-header {
+    text-align: center;
+    padding: 20px 0;
+    background-color: transparent; /* 背景色を透明に */
+    width: 100%;
+    position: absolute;
+    top: 0;
+    margin-top: 15%;
+}
+
+.app-title {
+    margin: 0;
+    font-size: 36px;
+    color: #ffffff; /* 白文字 */
+    font-family: 'Courier New', Courier, monospace; /* おしゃれなフォントスタイル */
+    letter-spacing: 2px; /* 文字間隔を広げてスタイリッシュに */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* 文字に影をつけて立体感を演出 */
+}
+
+/* ハートボタンを中央下部に配置 */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 100px); /* ヘッダーとメニューバーを除いた高さに調整 */
+    padding-top: 60px; /* タイトルの下に余白を追加 */
+}
+
+.heart-button {
+    background-color: transparent;
+    border: none;
+    font-size: 150px;
+    color: #ff0000;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, text-shadow 0.3s ease-in-out;
+}
+
+
+
 /* 中央に配置するコンテナ */
 .container {
     display: flex;
@@ -34,9 +74,6 @@ body {
     transform: scale(1.1);
     text-shadow: 0 0 20px rgba(255, 0, 0, 0.5); /* ハートにのみ影をつける */
 }
-
-
-
 
 .heart-button:active {
     transform: scale(0.9); /* 押された時に少し縮む */
@@ -82,4 +119,31 @@ body {
     100% {
         transform: rotate(360deg);
     }
+}
+
+/* メニューバーのスタイル */
+.menu-bar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #f1f1f1;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.menu-bar a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.menu-bar a:hover {
+    color: pink;
+}
+
+.menu-bar a:active {
+    color: pink;
 }
