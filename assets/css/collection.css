@@ -58,8 +58,21 @@ body {
 }
 
 .heart-icon {
-    font-size: 150px;
+    font-size: 350px; /* ハートの大きさを350pxに設定 */
+    position: relative;
+    transition: transform 0.5s ease, color 0.5s ease; /* スムーズな移動と色の変化 */
 }
+
+.heart-count {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px; /* カウントのサイズ */
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
 
 
 /* メニューバー */
